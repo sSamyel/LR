@@ -8,10 +8,8 @@ import matplotlib.pyplot as plt
 
 import self as self
 
-k_T = 6500
-c_T = 4190
+
 p = 1000
-T_T = 80
 L = 1
 D = 0.05
 u = 0.2
@@ -23,12 +21,13 @@ xq = "X - "
 yq = "Y - "
 zq = "Z - "
 delta = {'dAlpha' : 0.3, 'dBeta' : 0.2}
+T = (6500, 4190, 80)
 
 
 class Laboratory:
 
     def nextT(self, prevT):
-        return prevT + ((T_T - prevT) * (4 * k_T * delta.get('dAlpha')) / (c_T * p * D))
+        return prevT + ((T[2] - prevT) * (4 * T[0] * delta.get('dAlpha')) / (T[1]* p * D))
 
     def atau(self, a, b):
         return a + b
