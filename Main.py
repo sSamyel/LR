@@ -98,7 +98,9 @@ class Laboratory:
 
         fig = pylab.figure()
         axes = Axes3D(fig)
-
+        axes.set_xlabel('I')
+        axes.set_ylabel('tau')
+        axes.set_zlabel('T')
         axes.plot_trisurf( X, Y, Z , cmap = LinearSegmentedColormap.from_list ("red_blue", ['b', 'g', 'y'], 256))
 
         pylab.show()
