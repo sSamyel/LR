@@ -90,11 +90,15 @@ class Laboratory:
             x.append(arr[1])
             z.append(arr[2])
             #z.append(arr[2])
-            print(yq,float(arr[0]), " ",xq,float(arr[1])," ",zq,float(arr[2]),"\n")
 
             X = tuple(x)
             Y = tuple(y)
             Z = tuple(z)
+
+        if ResArr != 0:
+            for i in range(0, len(X), 1):
+                print(yq, float('{:.3f}'.format(Y[i])), '\t', xq, float('{:.3f}'.format(X[i])), '\t', zq, float('{:.3f}'.format(Z[i])), "\n")
+
 
         fig = pylab.figure()
         axes = Axes3D(fig)
