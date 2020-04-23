@@ -1,6 +1,7 @@
 import pylab
 import math
 from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.colors import LinearSegmentedColormap
 import numpy as np
 from matplotlib import cm
 import matplotlib.pyplot as plt
@@ -95,16 +96,10 @@ class Laboratory:
             Y = tuple(y)
             Z = tuple(z)
 
-        #x = np.arange(-10, 10, 0.1)
-        #y = np.arange(-10, 10, 0.1)
-       # X, Y = np.meshgrid(x, y)
-
-        #Z = np.meshgrid(z)
-
         fig = pylab.figure()
         axes = Axes3D(fig)
 
-        axes.plot_trisurf( X, Y, Z)
+        axes.plot_trisurf( X, Y, Z , cmap = LinearSegmentedColormap.from_list ("red_blue", ['b', 'g', 'y'], 256))
 
         pylab.show()
 
